@@ -12,11 +12,18 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('categories')->insert([
-            'name' => 'Remessa Parcial'
-        ]);
-        DB::table('categories')->insert([
-            'name' => 'Remessa'
-        ]);
+        DB::table('categories')->delete();
+
+        DB::table('categories')
+        ->insert(
+            [
+                [
+                    'name' => 'Remessa Parcial',
+                ],
+                [
+                    'name' => 'Remessa',
+                ]
+            ]
+        );
     }
 }
